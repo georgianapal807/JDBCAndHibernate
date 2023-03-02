@@ -1,0 +1,26 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-configuration SYSTEM
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate-dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/sda_database</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password"></property>
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+        <mapping class="sda.hibernate.theory.entity.Employee"/>
+        <mapping class="sda.hibernate.theory.embedded.Person"/>
+        <mapping class="sda.hibernate.theory.embedded.Address"/>
+
+        <mapping class="sda.hibernate.theory.relationship.onetoone.CNP"/>
+        <mapping class="sda.hibernate.theory.relationship.onetoone.Persoana"/>
+
+        <mapping class="sda.hibernate.theory.relationship.onetomany.Author"/>
+        <mapping class="sda.hibernate.theory.relationship.onetomany.Book"/>
+
+        <mapping class="sda.hibernate.theory.relationship.manytomany.Game"/>
+        <mapping class="sda.hibernate.theory.relationship.manytomany.Gamer"/>
+    </session-factory>
+</hibernate-configuration>
